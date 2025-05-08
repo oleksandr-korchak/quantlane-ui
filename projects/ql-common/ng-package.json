@@ -1,0 +1,7 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ql-common",
+  "lib": {
+    "entryFile": "main/src/public-api.ts"
+  }
+}

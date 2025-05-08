@@ -1,0 +1,68 @@
+@import 'mixins';
+@import 'vars';
+
+.ql-font-display-lg {
+    @include ql-font-display-lg();
+}
+
+.ql-font-display {
+    @include ql-font-display();
+}
+
+.ql-font-display-sm {
+    @include ql-font-display-sm();
+}
+
+.ql-font-headline-lg {
+    @include ql-font-headline-lg();
+}
+
+.ql-font-headline {
+    @include ql-font-headline();
+}
+
+.ql-font-headline-sm {
+    @include ql-font-headline-sm();
+}
+
+.ql-font-title-lg {
+    @include ql-font-title-lg();
+}
+
+.ql-font-title {
+    @include ql-font-title();
+}
+
+.ql-font-title-sm {
+    @include ql-font-title-sm();
+}
+
+.ql-font-body-lg {
+    @include ql-font-body-lg();
+}
+
+.ql-font-body {
+    @include ql-font-body();
+}
+
+.ql-font-body-sm {
+    @include ql-font-body-sm();
+}
+
+.ql-font-label-lg {
+    @include ql-font-label-lg();
+}
+
+.ql-font-label {
+    @include ql-font-label();
+}
+
+.ql-font-label-sm {
+    @include ql-font-label-sm();
+}
+
+.ql-font-overline {
+    @include ql-font-overline();
+}
+
+
