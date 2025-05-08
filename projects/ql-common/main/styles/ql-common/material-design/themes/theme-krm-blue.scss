@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+@use '../palletes/theme-colors' as themeColors;
+@use 'vars' as vars;
+
+html {
+    color-scheme: light;
+
+    @include mat.theme((
+        //color: themeColors.$primary-palette,
+        color: (
+            primary: mat.$orange-palette,
+            tertiary: mat.$orange-palette,
+            theme-type: light,
+        ),
+        typography: vars.$font-family--body,
+    ),
+    $overrides: (
+        surface: vars.$color-neutral-0,
+        surface-container: vars.$color-neutral-0,
+        surface-container-high: vars.$color-neutral-0,
+        surface-container-highest: vars.$color-neutral-0,
+        surface-container-low: vars.$color-neutral-0,
+        surface-container-lowest: vars.$color-neutral-0,
+        outline: vars.$color-neutral-40,
+        outline-variant: vars.$color-neutral-40,
+        background: vars.$color-neutral-0,
+    ));
+}
+
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+    @include mat.toolbar-overrides((
+        container-background-color: vars.$color-primary-50,
+        container-text-color: vars.$color-primary-400,
+    ));
+
+    @include mat.menu-overrides((
+        item-label-text-color: orange,
+        item-icon-color: red,
+    ));
+}

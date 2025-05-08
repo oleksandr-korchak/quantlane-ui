@@ -1,0 +1,25 @@
+@use 'mixins' as mx;
+@use 'vars' as vars;
+
+.ql-layout {
+    &__sidebar {
+        @include mx.border-style(right);
+        background: #ff6000;
+        padding-top: 1rem;
+        width: 64px;
+    }
+
+    &__logo {
+        display: block;
+        margin-inline: auto;
+        width: 32px;
+    }
+
+    &__sidenav {
+        .mat-mdc-button {
+            &.active {
+                --mdc-text-button-label-color: vars.$color-neutral-900;
+            }
+        }
+    }
+}
