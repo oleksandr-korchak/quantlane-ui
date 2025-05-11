@@ -1,4 +1,5 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core'
+import { MAT_CARD_CONFIG, MatCardConfig } from '@angular/material/card'
 import { BrowserModule } from '@angular/platform-browser'
 import { provideRouter, withComponentInputBinding } from '@angular/router'
 
@@ -10,5 +11,11 @@ export const appConfig: ApplicationConfig = {
         importProvidersFrom(BrowserModule),
         provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(routes, withComponentInputBinding()),
+        {
+            provide: MAT_CARD_CONFIG,
+            useValue: {
+                appearance: 'outlined',
+            } as MatCardConfig,
+        },
     ],
 }
