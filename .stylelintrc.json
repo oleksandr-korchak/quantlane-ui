@@ -32,7 +32,7 @@
         ],
         "@stylistic/indentation": 4,
         "@stylistic/number-leading-zero": null,
-        "scss/dollar-variable-pattern": "^[a-z]+([a-z0-9-__]+[a-z0-9]+)?$",
+        "scss/dollar-variable-pattern": "^[a-z_]+([a-z0-9-__]+[a-z0-9]+)?$",
         "order/order": [
             "custom-properties",
             "declarations"

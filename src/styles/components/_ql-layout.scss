@@ -3,8 +3,7 @@
 
 .ql-layout {
     &__sidebar {
-        @include mx.border-style(right);
-        background: #ff6000;
+        background: var(--mat-sys-surface-bright);
         padding-top: 1rem;
         width: 64px;
     }
@@ -15,11 +14,4 @@
         width: 32px;
     }
 
-    &__sidenav {
-        .mat-mdc-button {
-            &.active {
-                --mdc-text-button-label-color: vars.$color-neutral-900;
-            }
-        }
-    }
 }
