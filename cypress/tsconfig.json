@@ -1,0 +1,21 @@
+{
+  "module": "commonjs",
+  "moduleResolution": "node",
+  "preserveValueImports": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+    "sourceMap": true,
+    "types": ["cypress", "node"],
+    "paths": {
+      "@cy/utils": [
+        "utils/index.ts"
+      ],
+      "@cy/utils/*": [
+        "utils/*"
+      ]
+    }
+  },
+  "include": ["**/*.ts"]
+}
