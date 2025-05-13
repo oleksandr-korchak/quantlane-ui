@@ -71,6 +71,23 @@ export class QlTodosApiClientMock extends QlTodosApiClient {
             )
     }
 
+    override deleteOne(entityId: string): Observable<QlTodoList> {
+        let data = this.loadDataFromStorage()
+        const refEntity = data.find(item => item.id === entityId)
+        if (!refEntity) {
+            return throwError(() => new Error(`Entity with id ${entityId} not found`))
+        }
+
+        data = data.filter(item => item.id !== entityId)
+
+        this.saveDataToStorage(data)
+
+        return of(refEntity)
+            .pipe(
+                delay(100),
+            )
+    }
+
     private saveDataToStorage(data: QlTodoList[]): void {
         localStorage.setItem(this.storageKey, JSON.stringify(data))
     }

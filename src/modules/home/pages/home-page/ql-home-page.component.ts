@@ -46,4 +46,10 @@ export class QlHomePageComponent {
         this.qlTodoListUpdateDialogService.openDialog()
     }
 
+    onTodoListDelete(entity: QlTodoList) {
+        this.store.dispatch(
+            StoreActions.deleteRequestAction({ id: entity.id }),
+        )
+    }
+
 }

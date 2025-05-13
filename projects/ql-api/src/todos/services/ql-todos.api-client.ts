@@ -28,6 +28,11 @@ export class QlTodosApiClient {
         return this.httpClient.patch<QlTodoList>(url, { ...update })
     }
 
+    deleteOne(entityId: string): Observable<QlTodoList> {
+        const url = `${this.baseUrl}/${entityId}`
+        return this.httpClient.delete<QlTodoList>(url)
+    }
+
     create(payload: QlTodoListCreate): Observable<QlTodoList> {
         return this.httpClient.post<QlTodoList>(this.baseUrl, { ...payload })
     }

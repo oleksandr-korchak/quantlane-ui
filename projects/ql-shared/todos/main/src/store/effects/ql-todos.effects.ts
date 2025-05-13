@@ -90,4 +90,24 @@ export class QlTodosEffects {
             ),
     )
 
+    protected readonly deleteRequest$ = createEffect(() =>
+        this.actions$
+            .pipe(
+                ofType(StoreAction.deleteRequestAction),
+                mergeMap(({ id }) => {
+                    return this.qlTodosApiClient.deleteOne(id)
+                        .pipe(
+                            mapResponse({
+                                next: (entity) => (
+                                    StoreAction.deleteSuccessAction({ entity })
+                                ),
+                                error: (error: HttpErrorResponse) => (
+                                    StoreAction.deleteErrorAction({ error })
+                                ),
+                            }),
+                        )
+                }),
+            ),
+    )
+
 }

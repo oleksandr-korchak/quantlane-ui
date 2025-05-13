@@ -78,5 +78,18 @@ export namespace QlTodosStore {
             ...state,
             updateProcessing: ProcessingStore.eventProcessingFinish(state.updateProcessing, error),
         })),
+        on(StoreAction.deleteRequestAction, (state) => ({
+            ...state,
+            deleteProcessing: ProcessingStore.eventProcessingFinish(state.deleteProcessing),
+        })),
+        on(StoreAction.deleteSuccessAction, (state, { entity }) => ({
+            ...state,
+            todoLists: adapter.removeOne(entity.id, state.todoLists),
+            deleteProcessing: ProcessingStore.eventProcessingFinish(state.deleteProcessing),
+        })),
+        on(StoreAction.deleteErrorAction, (state, { error }) => ({
+            ...state,
+            deleteProcessing: ProcessingStore.eventProcessingFinish(state.deleteProcessing, error),
+        })),
     )
 }

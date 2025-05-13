@@ -14,6 +14,9 @@ export namespace QlTodosActions {
         updateRequest = '[TodoList] updateRequest',
         updateSuccess = '[TodoList] updateSuccess',
         updateError = '[TodoList] updateError',
+        deleteRequest = '[TodoList] deleteRequest',
+        deleteSuccess = '[TodoList] deleteSuccess',
+        deleteError = '[TodoList] deleteError',
     }
 
     export const fetchAllRequestAction = createAction(
@@ -58,6 +61,22 @@ export namespace QlTodosActions {
 
     export const updateErrorAction = createAction(
         ActionType.updateError,
+        props<{ error: Error }>(),
+    )
+
+
+    export const deleteRequestAction = createAction(
+        ActionType.deleteRequest,
+        props<{ id: string }>(),
+    )
+
+    export const deleteSuccessAction = createAction(
+        ActionType.deleteSuccess,
+        props<{ entity: QlTodoList }>(),
+    )
+
+    export const deleteErrorAction = createAction(
+        ActionType.deleteError,
         props<{ error: Error }>(),
     )
 
