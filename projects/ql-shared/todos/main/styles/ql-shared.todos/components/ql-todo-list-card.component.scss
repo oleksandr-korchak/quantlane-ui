@@ -1,0 +1,20 @@
+@import 'vars';
+
+.ql-todo-list-card {
+    $self: &;
+
+    &__tile {
+        background: var(--mat-sys-surface-bright);
+        border-radius: 12px;
+        color: var(--mat-sys-primary);
+        font-weight: 500;
+        padding: 1rem;
+    }
+
+    &--completed {
+        #{$self}__tile {
+            background: $color-success-50;
+            color: $color-success-400;
+        }
+    }
+}

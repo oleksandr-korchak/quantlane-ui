@@ -1,0 +1,28 @@
+<mat-card class="ql-todo-list-card" [class.ql-todo-list-card--completed]="allItemsCompleted()">
+    <mat-card-content>
+        <div class="d-flex w-100 align-items-center gap-3">
+            <div class="ql-todo-list-card__tile">
+                {{ completedItemsTotalCount() }} / {{ itemsTotalCount() }}
+            </div>
+            <div class="flex-grow-1">
+                <h5 class="py-0 my-0">
+                    {{ entity().title }}
+                </h5>
+
+                @if (entity().description?.length) {
+                    <div class="ql-todo-list-card__description">
+                        {{ entity().description }}
+                    </div>
+                }
+            </div>
+
+            <mat-divider [vertical]="true"/>
+            <button mat-stroked-button>
+                Edit
+            </button>
+            <button mat-stroked-button>
+                Details
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

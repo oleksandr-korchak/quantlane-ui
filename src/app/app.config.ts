@@ -1,3 +1,4 @@
+import { provideHttpClient } from '@angular/common/http'
 import { ApplicationConfig, importProvidersFrom, isDevMode, provideZoneChangeDetection } from '@angular/core'
 import { MAT_CARD_CONFIG, MatCardConfig } from '@angular/material/card'
 import { BrowserModule } from '@angular/platform-browser'
@@ -18,6 +19,7 @@ export const appConfig: ApplicationConfig = {
         importProvidersFrom(BrowserModule),
         provideZoneChangeDetection({ eventCoalescing: true }),
         provideRouter(routes, withComponentInputBinding()),
+        provideHttpClient(),
         {
             provide: MAT_CARD_CONFIG,
             useValue: {

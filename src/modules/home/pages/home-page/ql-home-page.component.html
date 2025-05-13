@@ -1,8 +1,32 @@
-<div class="container text-center">
-    <h1 class="text-center mb-3">Hello World!</h1>
+<div class="container">
+    <h1 class="text-center mb-3">To Do Lists</h1>
+    @if (dataFetchingProcessing().processing) {
+        <h5 class="text-center py-5"> Loading ...</h5>
+    } @else if (dataFetchingProcessing().processingError) {
+        <h5 class="text-center py-5"> Loading Error :( </h5>
+    } @else {
+        <div class="d-flex justify-content-between p-3 w-100">
+            <div>
 
-    <button mat-flat-button color="warn" class="">Some action</button>
+            </div>
+            <button mat-flat-button (click)="onCreateBtnClicked()">
+                <mat-icon matButtonIcon>add</mat-icon>
+                Create New
+            </button>
+        </div>
 
+        @for (entity of entitiesList(); track entity.id) {
+            <ql-todo-list-card [entity]="entity" class="mb-3"/>
+        }
+
+        @if (!entitiesList()?.length) {
+            <h5 class="text-center py-5"> No Data Found ...</h5>
+        }
+
+    }
 </div>
+
+
+
 
 
