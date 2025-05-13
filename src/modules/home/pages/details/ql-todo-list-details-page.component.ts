@@ -5,7 +5,7 @@ import { MatIcon } from '@angular/material/icon'
 import { ActivatedRoute, RouterLink } from '@angular/router'
 import { Store } from '@ngrx/store'
 import { QlTodoItem, QlTodoList } from 'ql-api'
-import { QlTodosActions, QlTodosSelectors } from 'ql-shared/todos'
+import { QlTodoItemCardComponent, QlTodosActions, QlTodosSelectors } from 'ql-shared/todos'
 import { ProcessingStore } from 'ql-utils'
 
 import StoreActions = QlTodosActions
@@ -20,6 +20,7 @@ import StoreSelectors = QlTodosSelectors
         ReactiveFormsModule,
         FormsModule,
         RouterLink,
+        QlTodoItemCardComponent,
     ],
     templateUrl: './ql-todo-list-details-page.component.html',
 })
@@ -50,6 +51,14 @@ export class QlTodoListDetailsPageComponent {
     }
 
     onTodoItemDelete(entity: QlTodoItem) {
+        // TODO: implement
+    }
+
+    onTodoItemEdit(item: QlTodoItem) {
+        // TODO: implement
+    }
+
+    onTodoItemCompletedStateChanged(item: QlTodoItem) {
         // TODO: implement
     }
 

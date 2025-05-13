@@ -1,0 +1,24 @@
+<mat-card class="ql-todo-item-card">
+    <mat-card-content>
+        <div class="d-flex w-100 align-items-center gap-3">
+            <div class="ql-todo-item-card__tile">
+                <mat-checkbox [ngModel]="entity().isCompleted" (ngModelChange)="onCompletedToggle($event)" />
+            </div>
+            <div class="flex-grow-1">
+                <div class="ql-todo-item-card__title">
+                    {{ entity().title }}
+                </div>
+            </div>
+
+            <mat-divider [vertical]="true"/>
+            <button mat-stroked-button (click)="onEditBtnClicked()">
+                <mat-icon>edit</mat-icon>
+                Edit
+            </button>
+            <button mat-stroked-button (click)="onDeleteBtnClicked()">
+                <mat-icon>delete</mat-icon>
+                Delete
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>

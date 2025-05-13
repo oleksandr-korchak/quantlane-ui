@@ -16,11 +16,13 @@
             </div>
 
             <mat-divider [vertical]="true"/>
-            <button mat-stroked-button (click)="onDeleteBtnClicked()">
-                Delete
-            </button>
             <button mat-stroked-button (click)="onDetailsBtnClicked()">
+                <mat-icon>info</mat-icon>
                 Details
+            </button>
+            <button mat-stroked-button (click)="onDeleteBtnClicked()">
+                <mat-icon>delete</mat-icon>
+                Delete
             </button>
         </div>
     </mat-card-content>

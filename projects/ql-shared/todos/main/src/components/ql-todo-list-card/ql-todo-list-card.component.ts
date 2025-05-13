@@ -2,6 +2,7 @@ import { Component, computed, input, output } from '@angular/core'
 import { MatButton } from '@angular/material/button'
 import { MatCard, MatCardContent } from '@angular/material/card'
 import { MatDivider } from '@angular/material/divider'
+import { MatIcon } from '@angular/material/icon'
 import { QlTodoList } from 'ql-api'
 
 
@@ -13,6 +14,7 @@ import { QlTodoList } from 'ql-api'
         MatCardContent,
         MatDivider,
         MatButton,
+        MatIcon,
     ],
 })
 export class QlTodoListCardComponent {

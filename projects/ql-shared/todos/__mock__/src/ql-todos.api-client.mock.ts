@@ -60,7 +60,15 @@ export class QlTodosApiClientMock extends QlTodosApiClient {
         const entity: QlTodoList = {
             ...payload,
             id: StringHelpers.guid(),
-            items: [],
+            items: [
+                {
+                    id: '123',
+                    isCompleted: false,
+                    createdAt: new Date().toISOString(),
+                    title: 'Item #1',
+                    completedAt: null,
+                },
+            ],
         }
         data.push(entity)
         this.saveDataToStorage(data)

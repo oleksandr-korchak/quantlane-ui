@@ -26,7 +26,10 @@
         </div>
 
         @for (item of refEntity()!.items; track item.id) {
-            {{ item.title }}
+            <ql-todo-item-card [entity]="item"
+                               (completedStateChanged)="onTodoItemCompletedStateChanged(item)"
+                               (edit)="onTodoItemEdit(item)"
+                               (delete)="onTodoItemDelete(item)" />
         }
 
         @if (!refEntity()?.items?.length) {
