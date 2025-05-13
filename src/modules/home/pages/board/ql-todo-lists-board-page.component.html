@@ -19,6 +19,7 @@
             <ql-todo-list-card
                     class="mb-3 d-block"
                     [entity]="entity"
+                    (details)="onTodoListDetails(entity)"
                     (delete)="onTodoListDelete(entity)"/>
         }
 

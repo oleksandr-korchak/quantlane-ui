@@ -3,12 +3,12 @@ import { Routes } from '@angular/router'
 
 export const routes: Routes = [
     {
-        path: 'home',
+        path: 'todos',
         loadChildren: () => import('../modules/home/ql-home.routes').then((r) => r.routes),
     },
     {
         path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',   
+        redirectTo: 'todos',
+        pathMatch: 'full',
     },
 ]

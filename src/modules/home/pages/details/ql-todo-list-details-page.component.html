@@ -1,0 +1,42 @@
+<div class="container">
+    @if (dataFetchingProcessing().processing) {
+        <h5 class="text-center py-5"> Loading ...</h5>
+    } @else if (dataFetchingProcessing().processingError) {
+        <h5 class="text-center py-5"> Loading Error :( </h5>
+    } @else if (refEntity()) {
+        <div class="d-flex p-3 w-100 gap-3 align-items-center">
+            <button mat-stroked-button [routerLink]="['../../board']">
+                <mat-icon matButtonIcon>arrow_back_ios</mat-icon>
+                Back
+            </button>
+            <div class="flex-grow-1">
+                <h3 class="mb-0 pb-0">
+                    {{ refEntity()!.title }}
+                </h3>
+
+                @if (refEntity()!.description?.length) {
+                    {{ refEntity()!.description }}
+                }
+            </div>
+
+            <button mat-flat-button (click)="onCreateBtnClicked()">
+                <mat-icon matButtonIcon>add</mat-icon>
+                Create New Item
+            </button>
+        </div>
+
+        @for (item of refEntity()!.items; track item.id) {
+            {{ item.title }}
+        }
+
+        @if (!refEntity()?.items?.length) {
+            <h5 class="text-center py-5"> No Data Found ...</h5>
+        }
+
+    }
+</div>
+
+
+
+
+

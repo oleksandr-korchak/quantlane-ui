@@ -42,7 +42,7 @@ export class QlTodoListUpdateDialogService {
             })
     }
 
-    openDialog(entityId?: number, options?: { isClone?: boolean }): void {
+    openDialog(entityId?: string, options?: { isClone?: boolean }): void {
         const entity$ = entityId
             ? this.store.select(StoreSelectors.selectOneTotoList(entityId))
             : of(undefined)

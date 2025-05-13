@@ -37,7 +37,7 @@ export namespace QlTodosSelectors {
         (ids, entities) => ids.map(item => entities[item]!),
     )
 
-    export const selectOneTotoList = (id: number) => createSelector(
+    export const selectOneTotoList = (id: string) => createSelector(
         selectEntities,
         (entities) => entities[id],
     )

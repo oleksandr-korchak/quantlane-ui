@@ -1,1 +1,3 @@
-export * from './home-page'
+export * from './board'
+export * from './details'
+

@@ -1,12 +1,20 @@
 import { Routes } from '@angular/router'
 
-import { QlHomePageComponent } from './pages'
+import { QlTodoListDetailsPageComponent, QlTodoListsBoardPageComponent } from './pages'
 
 
 export const routes: Routes = [
     {
+        path: 'board',
+        component: QlTodoListsBoardPageComponent,
+    },
+    {
+        path: 'details/:entityId',
+        component: QlTodoListDetailsPageComponent,
+    },
+    {
         path: '',
         pathMatch: 'full',
-        component: QlHomePageComponent,
+        redirectTo: 'board',
     },
 ]
