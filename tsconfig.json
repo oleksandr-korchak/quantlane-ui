@@ -20,6 +20,12 @@
     "strictPropertyInitialization": false,
     "allowJs": true,
     "paths": {
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "@env": [
+        "src/environments"
+      ],
       "ql-api": [
         "./projects/ql-api/src/public-api"
       ],
@@ -28,6 +34,9 @@
       ],
       "ql-shared": [
         "./projects/ql-shared/main/src/public-api"
+      ],
+      "ql-shared/todos": [
+        "./projects/ql-shared/todos/src/public-api"
       ],
       "ql-utils": [
         "./projects/ql-utils/main/src/public-api"

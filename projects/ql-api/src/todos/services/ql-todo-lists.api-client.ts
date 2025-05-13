@@ -1,0 +1,35 @@
+import { HttpClient } from '@angular/common/http'
+import { inject, Injectable } from '@angular/core'
+import { Observable } from 'rxjs'
+
+import { QlApi } from '../../common'
+import { QlTodoList, QlTodoListCreate, QlTodoListUpdate } from '../models'
+
+
+@Injectable({ providedIn: 'root' })
+export class QlTodoListsApiClient {
+
+    protected readonly baseUrl = `${QlApi.BASE_URL}/todo-lists`
+
+    // DI
+    protected readonly httpClient = inject(HttpClient)
+
+    fetchAll(): Observable<QlTodoList[]> {
+        return this.httpClient.get<QlTodoList[]>(this.baseUrl)
+    }
+
+    fetchOneById(entityId: string): Observable<QlTodoList> {
+        const url = `${this.baseUrl}/${entityId}`
+        return this.httpClient.get<QlTodoList>(url)
+    }
+
+    update(entityId: number, update: Partial<QlTodoListUpdate>): Observable<QlTodoList> {
+        const url = `${this.baseUrl}/${entityId}`
+        return this.httpClient.patch<QlTodoList>(url, { ...update })
+    }
+
+    create(payload: QlTodoListCreate): Observable<QlTodoList> {
+        return this.httpClient.post<QlTodoList>(this.baseUrl, { ...payload })
+    }
+
+}
