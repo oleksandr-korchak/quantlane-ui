@@ -36,7 +36,10 @@
         "./projects/ql-shared/main/src/public-api"
       ],
       "ql-shared/todos": [
-        "./projects/ql-shared/todos/src/public-api"
+        "./projects/ql-shared/todos/main/src/public-api"
+      ],
+      "ql-shared/todos/__mock__": [
+        "./projects/ql-shared/todos/__mock__/src/public-api"
       ],
       "ql-utils": [
         "./projects/ql-utils/main/src/public-api"

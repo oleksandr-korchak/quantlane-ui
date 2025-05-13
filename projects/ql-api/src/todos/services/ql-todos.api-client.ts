@@ -7,7 +7,7 @@ import { QlTodoList, QlTodoListCreate, QlTodoListUpdate } from '../models'
 
 
 @Injectable({ providedIn: 'root' })
-export class QlTodoListsApiClient {
+export class QlTodosApiClient {
 
     protected readonly baseUrl = `${QlApi.BASE_URL}/todo-lists`
 
@@ -23,7 +23,7 @@ export class QlTodoListsApiClient {
         return this.httpClient.get<QlTodoList>(url)
     }
 
-    update(entityId: number, update: Partial<QlTodoListUpdate>): Observable<QlTodoList> {
+    update(entityId: string, update: Partial<QlTodoListUpdate>): Observable<QlTodoList> {
         const url = `${this.baseUrl}/${entityId}`
         return this.httpClient.patch<QlTodoList>(url, { ...update })
     }

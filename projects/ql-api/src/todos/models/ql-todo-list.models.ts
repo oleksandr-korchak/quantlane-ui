@@ -4,7 +4,7 @@ import { QlTodoItem } from './ql-todo-item.models'
 export type QlTodoList = {
     id : string
     title: string
-    description: string
+    description: string | null
     items: QlTodoItem[]
 }
 

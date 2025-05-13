@@ -1,1 +1,1 @@
-export * from './ql-todo-lists.api-client'
+export * from './ql-todos.api-client'

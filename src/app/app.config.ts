@@ -6,6 +6,9 @@ import { environment } from '@env/environment'
 import { provideStore } from '@ngrx/store'
 import { provideStoreDevtools } from '@ngrx/store-devtools'
 import { storeFreeze } from 'ngrx-store-freeze'
+import { QlTodosApiClient } from 'ql-api'
+import { provideQlTodosStore } from 'ql-shared/todos'
+import { QlTodosApiClientMock } from 'ql-shared/todos/__mock__'
 
 import { routes } from './app.routes'
 
@@ -40,5 +43,10 @@ export const appConfig: ApplicationConfig = {
             connectInZone: true, // If set to true, the connection is established within the Angular zone
         }),
         // ./NGRX
+        {
+            provide: QlTodosApiClient,
+            useClass: QlTodosApiClientMock,
+        },
+        ...provideQlTodosStore(),
     ],
 }
