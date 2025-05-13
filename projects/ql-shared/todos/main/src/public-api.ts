@@ -1,3 +1,6 @@
 export * from './components'
+export * from './models'
 export * from './store'
+export * from './dialogs'
+export * from './services'
 export * from './ql-todos-store.providers'

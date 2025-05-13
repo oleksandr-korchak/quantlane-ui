@@ -16,7 +16,7 @@
         </div>
 
         @for (entity of entitiesList(); track entity.id) {
-            <ql-todo-list-card [entity]="entity" class="mb-3"/>
+            <ql-todo-list-card [entity]="entity" class="mb-3 d-block"/>
         }
 
         @if (!entitiesList()?.length) {

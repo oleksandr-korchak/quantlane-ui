@@ -1,0 +1,13 @@
+<div [formGroup]="formGroup">
+    <mat-form-field class="w-100">
+        <mat-label>Name</mat-label>
+        <input [formControlName]="FormField.title" matInput>
+        <mat-error>Required Field</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="w-100 mt-2">
+        <mat-label>Description</mat-label>
+        <input [formControlName]="FormField.description" matInput>
+        <mat-error>Required Field</mat-error>
+    </mat-form-field>
+</div>

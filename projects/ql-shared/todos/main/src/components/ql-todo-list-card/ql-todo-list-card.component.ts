@@ -17,10 +17,13 @@ import { QlTodoList } from 'ql-api'
 })
 export class QlTodoListCardComponent {
 
+    // inputs/outputs
     readonly entity = input.required<QlTodoList>()
-    readonly edit = output<void>()
+
+    readonly delete = output<void>()
     readonly details = output<void>()
 
+    // computed
     readonly itemsTotalCount = computed<number>(() => {
         return this.entity().items.length
     })
@@ -32,5 +35,13 @@ export class QlTodoListCardComponent {
     readonly allItemsCompleted = computed<boolean>(() => {
         return this.itemsTotalCount() > 0 && this.itemsTotalCount() == this.completedItemsTotalCount()
     })
+
+    onDeleteBtnClicked() {
+        this.delete.emit()
+    }
+
+    onDetailsBtnClicked() {
+        this.details.emit()
+    }
 
 }

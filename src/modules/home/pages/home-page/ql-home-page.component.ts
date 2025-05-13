@@ -4,7 +4,7 @@ import { MatButton } from '@angular/material/button'
 import { MatIcon } from '@angular/material/icon'
 import { Store } from '@ngrx/store'
 import { QlTodoList } from 'ql-api'
-import { QlTodoListCardComponent, QlTodosActions, QlTodosSelectors } from 'ql-shared/todos'
+import { QlTodoListCardComponent, QlTodoListUpdateDialogService, QlTodosActions, QlTodosSelectors } from 'ql-shared/todos'
 import { ProcessingStore } from 'ql-utils'
 
 import StoreActions = QlTodosActions
@@ -31,6 +31,7 @@ export class QlHomePageComponent {
 
     // DI
     protected readonly store = inject(Store)
+    protected readonly qlTodoListUpdateDialogService = inject(QlTodoListUpdateDialogService)
 
     constructor() {
         this.dataFetchingProcessing = this.store.selectSignal(StoreSelectors.selectFetchAllProcessing)
@@ -42,7 +43,7 @@ export class QlHomePageComponent {
     }
 
     onCreateBtnClicked() {
-
+        this.qlTodoListUpdateDialogService.openDialog()
     }
 
 }

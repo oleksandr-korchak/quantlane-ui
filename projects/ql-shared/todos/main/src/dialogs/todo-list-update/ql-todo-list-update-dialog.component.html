@@ -1,0 +1,36 @@
+<mat-card-header>
+    <mat-card-title>
+        Create To Do List
+    </mat-card-title>
+</mat-card-header>
+
+<mat-dialog-content>
+
+    @if (processingError?.length) {
+        <div class="text-center py-5">
+            <h5>Processing Error</h5>
+            {{ processingError }}
+        </div>
+    }
+
+    <ql-todo-list-update-form [formData]="dialogData.formData"/>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button [disabled]="isProcessing"
+            mat-dialog-close
+            mat-stroked-button>
+        Cancel
+    </button>
+
+    <button [disabled]="!formGroup?.valid || isProcessing"
+            color="primary"
+            mat-flat-button
+            tabindex="-1"
+            (click)="onSubmitBtnClicked()">
+        {{ (!isProcessing ? 'Create' : 'Processing ...') }}
+    </button>
+</mat-dialog-actions>
+
+
